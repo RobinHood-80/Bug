@@ -1,0 +1,66 @@
+﻿
+
+@page "/"
+@inject IJSRuntime jsRuntime;
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment env;
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor httpAccessor;
+@inject NavigationManager MyNavigationManager
+@using Bug.Components
+
+
+@inject Microsoft.Extensions.Logging.ILogger _logger;
+<div>
+    [Main Page]
+    The boxes below show a sequence of numbers from 0 to 100.
+    Clicking on the green box we navigate to the SubDetail page, which recevive the number as argument.
+</div>
+
+
+<div style="display:flex;flex-wrap: wrap; width: 100%;">
+
+    <div style="width:250px; flex-shrink:0; flex-wrap:wrap; flex-direction:column; flex-grow:0; height:150px; border: 1px solid green">
+
+
+        <div style="display:flex; flex-wrap:wrap; width:100%">
+            <T Width="100%" Height="auto" Id="@($"GG")" @key="@($"GG")" Text="@( $"One" )" Url="@GetBlazorUrl(0)" BgColor="green"></T>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; width:100%">
+            <T Width="100%" Height="auto" Id="@($"JJ")" @key="@($"JJ")" Text="@( $"Two" )" Url="@GetMvcUrl(0)" BgColor="red"></T>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+@code
+{
+    Random r = new Random();
+
+    public int GetRandom()
+    {
+        return r.Next(0, 100);
+    }
+
+    public Uri GetBlazorUrl(int v)
+    {
+
+        UriBuilder b = new UriBuilder(MyNavigationManager.BaseUri);
+        b.Path = "Detail/" + v.ToString();
+
+        return b.Uri;
+    }
+
+    public Uri GetMvcUrl(int v)
+    {
+
+        UriBuilder b = new UriBuilder(MyNavigationManager.BaseUri);
+        b.Path = "MvcDetail/" + v.ToString();
+
+        return b.Uri;
+    }
+
+}

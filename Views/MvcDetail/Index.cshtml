@@ -1,0 +1,31 @@
+﻿@model int
+
+
+this is a std mvc page, wait until the timer goes to 0 then press the back button or the button below.
+
+<span id="cnt"></span>
+<div><button id="clickme" disabled onclick="history.back()">Click Me to show the error!</button></div>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<script type="text/javascript">
+        var startTimerCnt = 60;
+        function startTimer(element) {
+            update(startTimerCnt, element);
+        }
+
+        function update(time, elementId) {
+            document.getElementById(elementId).innerHTML = "<b>"+ time + "</b> second(s) left"; 
+            if (time > 0)
+                setTimeout(update, 1000, --time, elementId);
+            else
+                document.getElementById('clickme').attributes.removeNamedItem('disabled');
+        }
+
+
+    startTimer("cnt");
+</script>

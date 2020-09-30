@@ -1,0 +1,29 @@
+﻿@page "/Detail/{Seed:int}"
+
+<div>
+    [SubDetail Page]
+    Nothing special here: parameter is @Seed
+    
+    <a href="@GetMvcUrl(0)">Link to MVC page</a>
+    <br/>
+
+    @for (int cnt = 0; cnt < 50; cnt++ )
+    {
+        <Bug.Components.C1 @key="@($"{Seed}--{cnt}")" Id="@($"{Seed}--{cnt}")" Url="@(GetMvcUrl(cnt))" Text="@cnt"></Bug.Components.C1>
+    }
+
+</div>
+
+    
+
+    @code {
+
+        [Parameter]
+        public int Seed { get; set; }
+
+
+        public Uri GetMvcUrl(int v)
+        {
+            return new Uri($"MvcDetail/{Seed+1000*v}", UriKind.Relative);
+        }
+    }

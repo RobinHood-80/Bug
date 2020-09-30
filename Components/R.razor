@@ -1,0 +1,16 @@
+﻿<div class="row">
+    @foreach (var c in Cols.Split(','))
+    {
+        <C ColName="@c" Text="@Text"></C>
+    }
+</div>
+
+
+    @code {
+
+        [Parameter]
+        public string Text { get; set; }
+        [Parameter]
+        public string Cols { get; set; }
+
+    }

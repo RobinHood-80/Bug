@@ -1,0 +1,97 @@
+@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+
+#maincontainer {
+    height: 100%;
+    padding: 10px;
+}
+
+
+
+#_mainlayout {
+    height: 100%;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+
+*.abox {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    margin: 2px;
+    padding: 2px;
+    font-size:20px;
+    
+    text-align:center;
+}
+
+body * {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+*.cell {
+    width: 50%;
+    height: 50%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    opacity:30%;
+}
+
+*.table {
+    width:100%;
+    height:100%;
+    display: table;
+}
+
+*.row {
+    display: table-row;
+}
+
+*.a {
+    background-color: yellow;
+    
+}
+
+*.b {
+    background-color: blue;
+}
+*.c {
+    background-color: red;
+}
+*.d {
+    background-color: green;
+}

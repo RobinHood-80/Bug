@@ -1,0 +1,38 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="abox">
+    <a href="@Url.ToString()">
+        <div class="table" style="background-color:@BgColor; width:@Width; height:@Height">
+
+            <R Text="@Text" cols="a"></R>
+
+            
+
+
+        </div>
+    </a>
+
+</div>
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    [Parameter]
+    public string Text { get; set; }
+    [Parameter]
+    public Uri Url { get; set; }
+
+    [Parameter]
+    public string BgColor { get; set; } = "";
+
+    [Parameter]
+    public string Width { get; set; } = "100%";
+    [Parameter]
+    public string Height { get; set; } = "100%";
+    [Parameter]
+    public string Id { get; set; }
+}

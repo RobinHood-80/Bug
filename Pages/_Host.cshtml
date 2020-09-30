@@ -1,0 +1,59 @@
+﻿@page "/"
+@namespace Bug.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BlazorOneServer</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <script src="~/scripts/lib/jquery/jquery-2.1.0.js"></script>
+    <script src="~/scripts/app.js?x=0"></script>
+</head>
+
+
+
+
+<body>
+    <div style="display: flex" id="maincontainer">
+
+        <div id="APP" style="flex-basis:100%; flex-shrink: 6; height:100%;">
+            <app>
+                <component type="typeof(App)" render-mode="ServerPrerendered" />
+            </app>
+
+        </div>
+
+    </div>
+
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+
+
+    
+</body>
+
+
+
+
+
+
+</html>
