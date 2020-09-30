@@ -9,11 +9,8 @@
 
 
 @inject Microsoft.Extensions.Logging.ILogger _logger;
-<div>
-    [Main Page]
-    The boxes below show a sequence of numbers from 0 to 100.
-    Clicking on the green box we navigate to the SubDetail page, which recevive the number as argument.
-</div>
+
+
 
 
 <div style="display:flex;flex-wrap: wrap; width: 100%;">
@@ -34,6 +31,79 @@
 
 
 </div>
+
+<div>
+    Read below for additional info:
+</div>
+
+
+
+<div>
+    <div>
+        <p>[Main Page]</p>
+        <p>Instructions on how to reproduce the problem:<br /> 1) There are two links on this page. To reproduce the issue you need to click on the "One", with green background.<br /> 2) After you clicked, you will see another blazor page with a link to a std mvc page, click this link<br /> 3) As soon the standard mvc page a count down appear, now you should have only this page displayed on the browser<br /> 4) right-click on the browser tab and select Duplicate from the context menu.<br /> 5) Click on the "cloned" tab to select it and then right-click on the browser Tab select another duplicate.<br /> 6) now switch to the most recently cloned tab and repeat the process at [5] until you have 4 tabs opened.<br /> 7) wait until the count down reaches to zero on all tabs<br /> 8) switch to the last cloned tab (should be the right most one), the button below "click me to show the error" should be enabled<br /> 9) click on the button this will execute a "history.back() javascript code."<br /> 10) when the previous page mentioned on (2) appear you should see after a short moment the yellow bar of execption.<br /> 11) open the browser console. watch out the exception message about the "component record order"</p>
+        <p>A side note: while clicking on the button on a cloned tab raises the error at least on 90% of situations, i've not been able<br /> to reproduce the issue click on the first (original) tab</p>
+        <p>The project uses prerendered mode. I suspect (judging by the delay)<br /> that the error is in some way related to a timing issue that make the prerendered tree not in sync with the second render tree<br /> that happens after the page is loaded.</p>
+    </div>
+
+    <div>
+        <div id="updateStatusMessage">
+            <p><strong>VS Version:</strong><br /> Microsoft Visual Studio Community 2019<br /> Version 16.7.5<br /> VisualStudio.16.Release/16.7.5+30523.141<br /> Microsoft .NET Framework<br /> Version 4.8.03761</p>
+            <p>Installed Version: Community</p>
+            <p>Visual C++ 2019 00435-60000-00000-AA662<br /> Microsoft Visual C++ 2019</p>
+            <p>ASP.NET and Web Tools 2019 16.7.532.28833<br /> ASP.NET and Web Tools 2019</p>
+            <p>ASP.NET Core Razor Language Services 16.1.0.2035807+72d099b977d3a85e65fa3b0614ca8cfc803fef02<br /> Provides languages services for ASP.NET Core Razor.</p>
+            <p>ASP.NET Web Frameworks and Tools 2019 16.7.532.28833<br /> For additional information, visit https://www.asp.net/</p>
+            <p>Azure App Service Tools v3.0.0 16.7.532.28833<br /> Azure App Service Tools v3.0.0</p>
+            <p>Azure Functions and Web Jobs Tools 16.7.532.28833<br /> Azure Functions and Web Jobs Tools</p>
+            <p>C# Tools 3.7.0-6.20459.4+7ee7c540e3bf19765695b1331c946ddf986d1516<br /> C# components used in the IDE. Depending on your project type and settings, a different version of the compiler may be used.</p>
+            <p>Common Azure Tools 1.10<br /> Provides common services for use by Azure Mobile Services and Microsoft Azure Tools.</p>
+            <p>Extensibility Message Bus 1.2.6 (master@34d6af2)<br /> Provides common messaging-based MEF services for loosely coupled Visual Studio extension components communication and integration.</p>
+            <p>GitHub.VisualStudio 2.11.106.19330<br /> A Visual Studio Extension that brings the GitHub Flow into Visual Studio.</p>
+            <p>IntelliCode Extension 1.0<br /> IntelliCode Visual Studio Extension Detailed Info</p>
+            <p>Microsoft Azure Tools 2.9<br /> Microsoft Azure Tools for Microsoft Visual Studio 2019 - v2.9.30701.1</p>
+            <p>Microsoft Continuous Delivery Tools for Visual Studio 0.4<br /> Simplifying the configuration of Azure DevOps pipelines from within the Visual Studio IDE.</p>
+            <p>Microsoft JVM Debugger 1.0<br /> Provides support for connecting the Visual Studio debugger to JDWP compatible Java Virtual Machines</p>
+            <p>Microsoft Library Manager 2.1.79+ge3567815aa.RR<br /> Install client-side libraries easily to any web project</p>
+            <p>Microsoft MI-Based Debugger 1.0<br /> Provides support for connecting Visual Studio to MI compatible debuggers</p>
+            <p>Microsoft Visual C++ Wizards 1.0<br /> Microsoft Visual C++ Wizards</p>
+            <p>Microsoft Visual Studio Tools for Containers 1.1<br /> Develop, run, validate your ASP.NET Core applications in the target environment. F5 your application directly into a container with debugging, or CTRL + F5 to edit &amp; refresh your app without having to rebuild the container.</p>
+            <p>Microsoft Visual Studio VC Package 1.0<br /> Microsoft Visual Studio VC Package</p>
+            <p>Mono Debugging for Visual Studio 16.7.5 (112c7bc)<br /> Support for debugging Mono processes with Visual Studio.</p>
+            <p>Node.js Tools 1.5.20701.1 Commit Hash:b0da3724234b78593207434292d9f891440edea1<br /> Adds support for developing and debugging Node.js apps in Visual Studio</p>
+            <p>NuGet Package Manager 5.7.0<br /> NuGet Package Manager in Visual Studio. For more information about NuGet, visit https://docs.nuget.org/</p>
+            <p>ProjectServicesPackage Extension 1.0<br /> ProjectServicesPackage Visual Studio Extension Detailed Info</p>
+            <p>SQL Server Data Tools 16.0.62008.03130<br /> Microsoft SQL Server Data Tools</p>
+            <p>TypeScript Tools 16.0.20702.2001<br /> TypeScript Tools for Microsoft Visual Studio</p>
+            <p>Visual Basic Tools 3.7.0-6.20459.4+7ee7c540e3bf19765695b1331c946ddf986d1516<br /> Visual Basic components used in the IDE. Depending on your project type and settings, a different version of the compiler may be used.</p>
+            <p>Visual F# Tools 10.10.0.0 for F# 4.7 16.7.0-beta.20361.3+3ef6f0b514198c0bfa6c2c09fefe41a740b024d5<br /> Microsoft Visual F# Tools 10.10.0.0 for F# 4.7</p>
+            <p>Visual Studio Code Debug Adapter Host Package 1.0<br /> Interop layer for hosting Visual Studio Code debug adapters in Visual Studio</p>
+            <p>Visual Studio Comparison Tools 1.0<br /> Information about my package</p>
+            <p>Visual Studio Container Tools Extensions (Preview) 1.0<br /> View, manage, and diagnose containers within Visual Studio.</p>
+            <p>Visual Studio Tools for Containers 1.0<br /> Visual Studio Tools for Containers</p>
+            <p>VisualStudio.DeviceLog 1.0<br /> Information about my package</p>
+            <p>VisualStudio.Foo 1.0<br /> Information about my package</p>
+            <p>VisualStudio.Mac 1.0<br /> Mac Extension for Visual Studio</p>
+            <p>Xamarin 16.7.000.452 (d16-7@033b1a7)<br /> Visual Studio extension to enable development for Xamarin.iOS and Xamarin.Android.</p>
+            <p>Xamarin Designer 16.7.0.495 (remotes/origin/d16-7@79c0c522c)<br /> Visual Studio extension to enable Xamarin Designer tools in Visual Studio.</p>
+            <p>Xamarin Templates 16.7.85 (1bcbbdf)<br /> Templates for building iOS, Android, and Windows apps with Xamarin and Xamarin.Forms.</p>
+            <p>Xamarin.Android SDK 11.0.2.0 (d16-7/025fde9)<br /> Xamarin.Android Reference Assemblies and MSBuild support.<br /> Mono: 83105ba<br /> Java.Interop: xamarin/java.interop/d16-7@1f3388a<br /> ProGuard: Guardsquare/proguard/proguard6.2.2@ebe9000<br /> SQLite: xamarin/sqlite/3.32.1@1a3276b<br /> Xamarin.Android Tools: xamarin/xamarin-android-tools/d16-7@017078f</p>
+            <p><br /> Xamarin.iOS and Xamarin.Mac SDK 14.0.0.0 (7ec3751a1)<br /> Xamarin.iOS and Xamarin.Mac Reference Assemblies and MSBuild support.</p>
+            <p><br /><strong>Asp.net Info:</strong><br /> .NET Core SDK (reflecting any global.json):<br /> Version: 3.1.402<br /> Commit: 9b5de826fd</p>
+            <p>Runtime Environment:<br /> OS Name: Windows<br /> OS Version: 6.1.7601<br /> OS Platform: Windows<br /> RID: win7-x64<br /> Base Path: C:\PROGRAM FILES\DOTNET\sdk\3.1.402\</p>
+            <p>Host (useful for support):<br /> Version: 3.1.8<br /> Commit: 9c1330dedd</p>
+            <p>.NET Core SDKs installed:<br /> 1.0.0-preview2-003131 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.104 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.200 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.201 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.202 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.301 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.400 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.401 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.402 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.403 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.500 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.502 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.503 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.504 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.505 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.507 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.508 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.1.509 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.2.101 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 2.2.107 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 3.0.100 [C:\PROGRAM FILES\DOTNET\sdk]<br /> 3.1.402 [C:\PROGRAM FILES\DOTNET\sdk]</p>
+            <p>.NET Core runtimes installed:<br /> Microsoft.AspNetCore.All 2.1.1 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.2 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.3 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.4 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.5 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.6 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.7 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.8 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.9 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.11 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.12 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.13 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.1.22 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.2.0 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.All 2.2.5 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.All]<br /> Microsoft.AspNetCore.App 2.1.1 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.2 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.3 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.4 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.5 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.6 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.7 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.8 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.9 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.11 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.12 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.13 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.1.22 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.2.0 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 2.2.5 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 3.0.0 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.AspNetCore.App 3.1.8 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.AspNetCore.App]<br /> Microsoft.NETCore.App 1.0.1 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.0.6 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.0.7 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.0.9 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.1 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.2 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.3-servicing-26724-03 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.3 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.4 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.5 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.6 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.7 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.8 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.9 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.11 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.12 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.13 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.1.22 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.2.0 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 2.2.5 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 3.0.0 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.NETCore.App 3.1.8 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.NETCore.App]<br /> Microsoft.WindowsDesktop.App 3.0.0 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.WindowsDesktop.App]<br /> Microsoft.WindowsDesktop.App 3.1.8 [C:\PROGRAM FILES\DOTNET\shared\Microsoft.WindowsDesktop.App]</p>
+            <p><br /><strong>OS Version</strong>: Windows 7 / 10 / Ubuntu linux.</p>
+            <p>Browser: Google Chrome Version 85.0.4183.121 (Official Build) (64 bit)</p>
+        </div>
+    </div>
+
+
+</div>
+
+
+
 
 
 @code

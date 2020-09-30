@@ -2,15 +2,14 @@
 
 <div>
     [SubDetail Page]
-    Nothing special here: parameter is @Seed
+    Nothing special here: just click the link to go to a mvc (non blazor) page then start duplicate the page 
+    with the countdown at least four times (4 tabs). Take care to create the duplicate page by starting from the most recent duplicate one
+    not from the first page. this increases the chances to see the issue.
     
     <a href="@GetMvcUrl(0)">Link to MVC page</a>
     <br/>
 
-    @for (int cnt = 0; cnt < 50; cnt++ )
-    {
-        <Bug.Components.C1 @key="@($"{Seed}--{cnt}")" Id="@($"{Seed}--{cnt}")" Url="@(GetMvcUrl(cnt))" Text="@cnt"></Bug.Components.C1>
-    }
+    
 
 </div>
 
